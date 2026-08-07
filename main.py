@@ -51,5 +51,22 @@ def jogo():
         resultado = verificar_palpite(palavra, palpite)
         print(resultado)
 
+def menu():
+    while True:
+        print("\n=== Jogo de Palavras ===\n")
+        print("1 - Jogar\n")
+        print("2 - Sair\n")
+        
+        opcao = input("")
+        
+        if opcao == "1":
+            jogo()
+            
+        elif opcao == "2":
+            print("Até mais!")
+            break
+        
+        else:
+            "Opção inválida"
 
-jogo()
+menu()
