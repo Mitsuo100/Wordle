@@ -1,8 +1,47 @@
 import random
 
-
-BANCO_PALAVRAS = ["python", "java", "c", "c#", "c++", "lua"]
-
+BANCO_PALAVRAS = [
+    "cobra",
+    "pizza",
+    "fatia",
+    "arroz",
+    "zanni",
+    "manga",
+    "livro",
+    "folha",
+    "pedra",
+    "nuvem",
+    "praia",
+    "areia",
+    "carta",
+    "sonho",
+    "verde",
+    "preto",
+    "bravo",
+    "amigo",
+    "veloz",
+    "feliz",
+    "clube",
+    "caixa",
+    "porta",
+    "vinho",
+    "fruta",
+    "limao",
+    "festa",
+    "vento",
+    "barco",
+    "trigo",
+    "campo",
+    "radio",
+    "tenis",
+    "piano",
+    "metro",
+    "mundo",
+    "cacto",
+    "pente",
+    "tigre",
+    "zebra"
+]
 
 def escolher_palavra():
     return random.choice(BANCO_PALAVRAS)
@@ -15,6 +54,7 @@ def mostrar_interface(tamanho):
 
 
 def verificar_palpite(palavra, palpite):
+    global erros
     resultado = ""
     palavra_temp = list(palavra)
 
@@ -32,11 +72,15 @@ def verificar_palpite(palavra, palpite):
 
         else:
             resultado += "_"
-
+            
+        
+    erros += 1
     return resultado
 
 
 def jogo():
+    global erros
+    erros = 0
     palavra = escolher_palavra()
 
     mostrar_interface(len(palavra))
@@ -50,6 +94,7 @@ def jogo():
 
         resultado = verificar_palpite(palavra, palpite)
         print(resultado)
+        print(f"Erros: {erros}")
 
 def menu():
     while True:
@@ -67,6 +112,6 @@ def menu():
             break
         
         else:
-            "Opção inválida"
+            print("Opção inválida")
 
 menu()
