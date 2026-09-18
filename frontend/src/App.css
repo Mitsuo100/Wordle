@@ -1,0 +1,184 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+button {
+    font-family: inherit;
+}
+
+.app {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 15px;
+}
+
+h1 {
+    margin: 0 0 30px;
+    font-size: 36px;
+}
+
+.tabuleiro {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.linha {
+    display: flex;
+    gap: 5px;
+}
+
+.casa {
+    width: 55px;
+    height: 55px;
+    border: 2px solid #d3d6da;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.casa.correct {
+    background: #6aaa64;
+    border-color: #6aaa64;
+    color: white;
+}
+
+.casa.present {
+    background: #c9b458;
+    border-color: #c9b458;
+    color: white;
+}
+
+.casa.absent {
+    background: #787c7e;
+    border-color: #787c7e;
+    color: white;
+}
+
+.palpite {
+    height: 35px;
+    margin: 15px 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.teclado {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+}
+
+.linha-teclado {
+    width: 100%;
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+}
+
+.tecla {
+    flex: 1;
+    min-width: 0;
+    max-width: 45px;
+    height: 50px;
+    border: none;
+    border-radius: 4px;
+    background: #d3d6da;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.tecla.correct {
+    background: #6aaa64;
+    color: white;
+}
+
+.tecla.present {
+    background: #c9b458;
+    color: white;
+}
+
+.tecla.absent {
+    background: #787c7e;
+    color: white;
+}
+
+.tecla.especial {
+    flex: 1.5;
+    max-width: 70px;
+}
+
+.novo-jogo {
+    margin-top: 25px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background: #333;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+@media (max-width: 600px) {
+    .app {
+        padding: 20px 8px;
+    }
+
+    h1 {
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+
+    .casa {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+    }
+
+    .teclado {
+        max-width: 100%;
+    }
+
+    .linha-teclado {
+        gap: 3px;
+    }
+
+    .tecla {
+        height: 45px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 400px) {
+    .casa {
+        width: 44px;
+        height: 44px;
+        font-size: 21px;
+    }
+
+    .linha-teclado {
+        gap: 2px;
+    }
+
+    .tecla {
+        height: 42px;
+        font-size: 11px;
+    }
+
+    .tecla.especial {
+        max-width: 60px;
+    }
+}
